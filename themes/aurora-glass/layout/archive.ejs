@@ -1,0 +1,10 @@
+<section class="archive glass-card">
+  <p class="eyebrow">Archive</p>
+  <h1>时间胶囊</h1>
+  <% page.posts.each(function(post) { %>
+    <a class="archive-item" href="<%- url_for(post.path) %>">
+      <time><%= date(post.date, 'YYYY.MM.DD') %></time>
+      <span><%= post.title %></span>
+    </a>
+  <% }) %>
+</section>

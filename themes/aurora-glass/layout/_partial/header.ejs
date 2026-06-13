@@ -1,0 +1,11 @@
+<header class="site-header glass-card">
+  <a class="brand" href="<%- url_for('/') %>">
+    <span class="brand-mark">✦</span>
+    <span><%= config.title %></span>
+  </a>
+  <nav class="nav-links" aria-label="主导航">
+    <% Object.keys(theme.menu || {}).forEach(function(name) { %>
+      <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+    <% }) %>
+  </nav>
+</header>

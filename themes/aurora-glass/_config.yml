@@ -1,0 +1,17 @@
+menu:
+  首页: /
+  归档: /archives/
+  关于: /about/
+social:
+  GitHub: https://github.com/
+  Bilibili: https://www.bilibili.com/
+  Email: mailto:hello@example.com
+hero:
+  title: 星璃的玻璃花园
+  subtitle: 写代码，也写梦；追番，也追光。
+  cta_primary: 开始阅读
+  cta_secondary: 认识我
+profile:
+  name: 星璃
+  role: Front-end Dreamer / ACG Lover
+  bio: 喜欢 TypeScript、城市夜景、猫耳耳机和所有温柔发光的故事。
