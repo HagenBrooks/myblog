@@ -1,0 +1,46 @@
+<section class="hero glass-card">
+  <div class="hero-copy">
+    <p class="eyebrow">Welcome to <%= config.city || 'Moon City' %></p>
+    <h1><%= theme.hero.title %></h1>
+    <p class="hero-subtitle"><%= theme.hero.subtitle %></p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#posts"><%= theme.hero.cta_primary %></a>
+      <a class="btn ghost" href="<%- url_for('/about/') %>"><%= theme.hero.cta_secondary %></a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-label="二次元风格头像卡片">
+    <div class="anime-avatar">
+      <div class="avatar-face">☆</div>
+      <div class="avatar-ribbon">Dream Log</div>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard">
+  <aside class="profile-card glass-card">
+    <div class="profile-avatar">☾</div>
+    <h2><%= theme.profile.name %></h2>
+    <p class="role"><%= theme.profile.role %></p>
+    <p><%= theme.profile.bio %></p>
+    <div class="social-grid">
+      <% Object.keys(theme.social || {}).forEach(function(name) { %>
+        <a href="<%= theme.social[name] %>" target="_blank" rel="noopener"><%= name %></a>
+      <% }) %>
+    </div>
+  </aside>
+
+  <section id="posts" class="post-list">
+    <div class="section-heading">
+      <p class="eyebrow">Latest Notes</p>
+      <h2>新鲜出炉的碎片</h2>
+    </div>
+    <% page.posts.each(function(post) { %>
+      <article class="post-card glass-card">
+        <time><%= date(post.date, 'YYYY.MM.DD') %></time>
+        <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+        <p><%= post.excerpt || strip_html(post.content).substring(0, 120) %></p>
+        <a class="read-more" href="<%- url_for(post.path) %>">继续阅读 →</a>
+      </article>
+    <% }) %>
+  </section>
+</section>
